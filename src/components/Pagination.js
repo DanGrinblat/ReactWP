@@ -20,7 +20,7 @@ class Pagination extends React.Component {
 					key={number}
 					id={number}
 					className={`item ${
-						this.props.selectedPage == number ? "active" : ""
+						this.props.selectedPage === number ? "active" : ""
 					}`}
 					onClick={this.onClickPageHelper}
 				>

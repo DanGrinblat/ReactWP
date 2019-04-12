@@ -8,14 +8,9 @@
 	vertical-align: middle;
 }
 
-/* TODO: Make this responsive
-/* Subtract the height of the footer */
-.grid {
-	min-height: calc(100% - 100px);
-}
-
-/* Make room for pagination module */
+/* Make room for pagination module and footer */
 .ui.grid {
 	margin-top: 0 !important;
 	margin-bottom: -58px !important;
+	min-height: calc(100vh - 100px);
 }

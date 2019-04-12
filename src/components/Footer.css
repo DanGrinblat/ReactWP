@@ -1,0 +1,15 @@
+.footer {
+	background-color: #8557da;
+	color: #000000;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.footerLogo {
+	position: relative;
+	left: 40px;
+	width: 100px;
+	height: auto;
+}

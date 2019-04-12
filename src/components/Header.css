@@ -1,0 +1,17 @@
+.header {
+	background-color: #8557da;
+	color: #000000;
+	width: 100%;
+	z-index: 10;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.headerLogo {
+	position: relative;
+	left: 40px;
+}

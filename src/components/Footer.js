@@ -6,7 +6,7 @@ import logo from "../images/logo-footer.png";
 
 const Footer = () => {
 	return (
-		<div className="  footer">
+		<div className="footer">
 			<Link to="/" className="footer-inline-block">
 				<img className="footerLogo" src={logo} alt="Logo" />
 			</Link>

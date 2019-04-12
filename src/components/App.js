@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import BlogHome from "./BlogHome";
-import SinglePost from "./SinglePost";
+import PostPage from "./PostPage";
 import { Router, Route } from "react-router-dom";
 import history from "./history";
 
@@ -28,11 +28,7 @@ class App extends React.Component {
 							/>
 						)}
 					/>
-					<Route
-						path="/blog/:postname"
-						exact
-						component={SinglePost}
-					/>
+					<Route path="/blog/:postname" exact component={PostPage} />
 					<Footer />
 				</Router>
 			</div>

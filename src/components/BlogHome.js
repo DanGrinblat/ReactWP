@@ -1,4 +1,3 @@
-import "./BlogHome.css";
 import React from "react";
 import PostList from "./PostList";
 import Pagination from "./Pagination";

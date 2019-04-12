@@ -1,6 +1,7 @@
-import "./PostList";
+import "./PostList.css";
 import React from "react";
-import Post from "./Post";
+import { Link } from "react-router-dom";
+import PostSummary from "./PostSummary";
 
 class PostList extends React.Component {
 	renderList() {
@@ -14,7 +15,9 @@ class PostList extends React.Component {
 			return (
 				<div key={post.id} className="equal width column">
 					<center>
-						<Post post={post} />
+						<Link to={`/blog/${post.slug}`}>
+							<PostSummary post={post} />
+						</Link>
 					</center>
 				</div>
 			);

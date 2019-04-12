@@ -7,7 +7,7 @@ class Header extends React.Component {
 	//Hardcoded Categories for demo
 	render() {
 		return (
-			<div className="header sticky">
+			<div className="topHeader sticky">
 				<Link to="/" className="headerLogo header-inline-block">
 					<img src={logo} alt="Logo" />
 				</Link>

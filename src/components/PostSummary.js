@@ -1,7 +1,6 @@
-import "./PostList.css";
 import React from "react";
 
-class Post extends React.Component {
+class PostSummary extends React.Component {
 	//Remove all HTML tags
 	strip(html) {
 		var tmp = document.createElement("div");
@@ -41,4 +40,4 @@ class Post extends React.Component {
 	}
 }
 
-export default Post;
+export default PostSummary;

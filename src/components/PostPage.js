@@ -24,7 +24,7 @@ class PostPage extends React.Component {
 
 	//Using dangerouslySetInnerHTML for demo purposes only
 	render() {
-		if (this.state.post.length == 0) {
+		if (this.state.post.length === 0) {
 			return <div />;
 		}
 		console.log(this.state.post);

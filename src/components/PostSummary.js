@@ -1,3 +1,4 @@
+import "./PostSummary.css";
 import React from "react";
 
 class PostSummary extends React.Component {
@@ -12,7 +13,7 @@ class PostSummary extends React.Component {
 		if (string.length < maxLength) {
 			return string;
 		}
-		//Trim the string to the maximum length
+
 		var truncatedString = string.substr(0, maxLength);
 
 		//Re-trim if we are in the middle of a word
@@ -30,11 +31,11 @@ class PostSummary extends React.Component {
 
 		return (
 			<div>
-				<img src={imageLink} alt="" style={{ width: "300px" }} />
-				<div>
+				<img src={imageLink} alt="" class="post-summary-image" />
+				<div className="post-summary-text">
 					<b>{title.rendered}</b>
+					<div>{excerptFormatted}</div>
 				</div>
-				<div>{excerptFormatted}</div>
 			</div>
 		);
 	}

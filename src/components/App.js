@@ -1,3 +1,4 @@
+import "./App.css";
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -14,7 +15,7 @@ class App extends React.Component {
 	*/
 	render() {
 		return (
-			<div style={{ height: "100vh" }}>
+			<div class="app-full-screen">
 				<Router history={history}>
 					<Header />
 					<Route path="/" exact component={BlogHome} />

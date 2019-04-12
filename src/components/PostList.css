@@ -1,6 +1,20 @@
 /* Make room for pagination module and footer */
 .post-list {
 	margin-top: 0 !important;
-	margin-bottom: -58px !important;
+	margin-bottom: -54px !important;
 	min-height: calc(100vh - 100px);
+}
+
+@media only screen and (max-width: 991px) {
+	.post-list {
+		margin-top: 70px !important;
+		margin-bottom: 10px !important;
+	}
+}
+
+@media only screen and (max-height: 880px) {
+	.post-list {
+		margin-top: 70px !important;
+		margin-bottom: 10px !important;
+	}
 }

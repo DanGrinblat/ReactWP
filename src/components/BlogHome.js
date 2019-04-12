@@ -16,34 +16,65 @@ class BlogHome extends React.Component {
 	};
 
 	componentDidMount() {
-		this.retrievePosts(this.state.selectedPage, this.state.postsPerPage);
+		this.retrieveAll(this.state.selectedPage, this.state.postsPerPage);
 	}
 
 	onClickPage = newPage => {
 		this.setState({
 			selectedPage: Number(newPage)
 		});
-		this.retrievePosts(newPage, this.state.postsPerPage);
+		this.retrieveAll(newPage, this.state.postsPerPage);
 	};
 
-	//Retrieve Posts followed by the media required by each post
-	retrievePosts = async (page, perPage) => {
-		console.log(page);
-		const response = await wprest.get("wp/v2/posts", {
-			params: { page: page, per_page: perPage }
-		});
+	//Retrieve Categories, Posts, and Media in succession
+	retrieveAll = async (page, perPage) => {
+		const categoriesData = await this.retrieveCategories();
+		const postsData = await this.retrievePosts(
+			page,
+			perPage,
+			categoriesData
+		);
 
-		const postIdsList = response.data.map(post => {
+		const postIdsList = postsData.map(post => {
 			return post.featured_media;
 		});
+		await this.retrieveMedia(postIdsList);
+	};
 
-		this.setState({
-			posts: response.data,
-			postCount: response.headers["x-wp-total"],
-			pageCount: response.headers["x-wp-totalpages"]
-		});
+	retrievePosts = async (page, perPage, categories) => {
+		var params = { page: page, per_page: perPage };
+
+		const selectedCategory = this.props.match.params.categoryterm;
+		if (selectedCategory != null) {
+			var selectedCategoryExists = false;
+			for (var i = 0; i < categories.length; i++) {
+				if (selectedCategory === categories[i].slug) {
+					params.categories = [categories[i].id];
+					selectedCategoryExists = true;
+					break;
+				}
+			}
+			if (!selectedCategoryExists) {
+				return [];
+			}
+		}
+
+		const response = await wprest.get("wp/v2/posts", { params });
 		console.log(response);
-		this.retrieveMedia(postIdsList);
+
+		if (this.state.posts !== response.data) {
+			//If there are 0 pages, set pageCount to 1
+			const newPageCount =
+				response.headers["x-wp-totalpages"] !== "0"
+					? response.headers["x-wp-totalpages"]
+					: "1";
+			this.setState({
+				posts: response.data,
+				postCount: response.headers["x-wp-total"],
+				pageCount: newPageCount
+			});
+		}
+		return response.data;
 	};
 
 	async retrieveMedia(postIdsList) {
@@ -51,7 +82,18 @@ class BlogHome extends React.Component {
 			params: { include: postIdsList }
 		});
 
-		this.setState({ media: response.data });
+		if (this.state.media !== response.data) {
+			this.setState({ media: response.data });
+		}
+		return response.data;
+	}
+
+	async retrieveCategories() {
+		const response = await wprest.get("wp/v2/categories");
+		if (this.state.categories !== response.data) {
+			this.setState({ categories: response.data });
+		}
+		return response.data;
 	}
 
 	render() {

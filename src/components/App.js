@@ -15,6 +15,11 @@ class App extends React.Component {
 				<Router history={history}>
 					<Route path="/" exact component={BlogHome} />
 					<Route
+						path="/category/:categoryterm"
+						exact
+						component={BlogHome}
+					/>
+					<Route
 						path="/blog/:postname"
 						exact
 						component={SinglePost}

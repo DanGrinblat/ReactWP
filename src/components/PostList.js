@@ -12,8 +12,10 @@ class PostList extends React.Component {
 			}
 
 			return (
-				<div key={post.id} className="equal width centered column">
-					<Post post={post} />
+				<div key={post.id} className="equal width column">
+					<center>
+						<Post post={post} />
+					</center>
 				</div>
 			);
 		});

@@ -8,10 +8,9 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div className="header sticky">
-				<Link to="/" className="headerLogo inline-block">
+				<Link to="/" className="headerLogo header-inline-block">
 					<img src={logo} alt="Logo" />
 				</Link>
-
 				<Link to="/category/blog">
 					<div className="menuItem">Blog</div>
 				</Link>

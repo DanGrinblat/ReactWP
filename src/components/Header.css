@@ -15,11 +15,7 @@
 	margin-left: 40px;
 }
 
-.menuGrid {
-	padding-left: 1000px;
-}
-
-.inline-block {
+.header-inline-block {
 	display: inline-block;
 	vertical-align: -76%;
 }

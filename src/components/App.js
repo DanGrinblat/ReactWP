@@ -28,7 +28,7 @@ class App extends React.Component {
 							/>
 						)}
 					/>
-					<Route path="/blog/:postname" exact component={PostPage} />
+					<Route path="/blog/:postslug" exact component={PostPage} />
 					<Footer />
 				</Router>
 			</div>

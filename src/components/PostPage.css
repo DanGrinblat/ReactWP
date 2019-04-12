@@ -1,5 +1,6 @@
-/* Make room for the footer */
+/* Make room for the header/footer */
 .post-page {
-	height: 100%;
-	margin-bottom: -34px !important;
+	padding-top: 70px;
+	padding-left: 15px;
+	min-height: calc(100% - 38px);
 }

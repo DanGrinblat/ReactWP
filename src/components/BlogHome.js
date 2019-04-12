@@ -18,13 +18,6 @@ class BlogHome extends React.Component {
 		this.retrieveAll(this.state.selectedPage, this.state.postsPerPage);
 	}
 
-	onClickPage = newPage => {
-		this.setState({
-			selectedPage: Number(newPage)
-		});
-		this.retrieveAll(newPage, this.state.postsPerPage);
-	};
-
 	//Retrieve Categories, Posts, and Media in succession
 	retrieveAll = async (page, perPage) => {
 		const categoriesData = await this.retrieveCategories();
@@ -94,6 +87,13 @@ class BlogHome extends React.Component {
 		}
 		return response.data;
 	}
+
+	onClickPage = newPage => {
+		this.setState({
+			selectedPage: Number(newPage)
+		});
+		this.retrieveAll(newPage, this.state.postsPerPage);
+	};
 
 	render() {
 		return (

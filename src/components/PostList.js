@@ -23,7 +23,7 @@ class PostList extends React.Component {
 
 	render() {
 		return (
-			<div className="ui container three column doubling stackable middle aligned centered grid">
+			<div className="ui container three column doubling stackable middle aligned centered grid post-list">
 				{this.renderList()}
 			</div>
 		);

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly 1`] = `
+<div
+  className="footer"
+>
+  <Link
+    className="footer-inline-block"
+    to="/"
+  >
+    <img
+      alt="Logo"
+      className="footerLogo"
+      src="logo-footer.png"
+    />
+  </Link>
+  <Link
+    to="/category/blog"
+  >
+    <div
+      className="menuItem"
+    >
+      Blog
+    </div>
+  </Link>
+  <Link
+    to="/category/business"
+  >
+    <div
+      className="menuItem"
+    >
+      Business
+    </div>
+  </Link>
+  <Link
+    to="/category/news"
+  >
+    <div
+      className="menuItem"
+    >
+      News
+    </div>
+  </Link>
+  <Link
+    to="/category/tech"
+  >
+    <div
+      className="menuItem"
+    >
+      Tech
+    </div>
+  </Link>
+  <Link
+    to="/category/misc"
+  >
+    <div
+      className="menuItem"
+    >
+      Misc
+    </div>
+  </Link>
+</div>
+`;

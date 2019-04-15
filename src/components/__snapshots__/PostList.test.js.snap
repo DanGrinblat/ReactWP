@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostList should render correctly 1`] = `
+<div
+  className="ui container three column doubling stackable middle aligned centered grid post-list"
+>
+  <div
+    className="equal width column"
+    key="1"
+  >
+    <center>
+      <Link
+        to="/blog/undefined"
+      >
+        <PostSummary
+          post={
+            Object {
+              "excerpt": Object {
+                "rendered": "excerpt",
+              },
+              "featured_media": null,
+              "id": 1,
+              "imageLink": null,
+              "title": "title",
+            }
+          }
+        />
+      </Link>
+    </center>
+  </div>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogHome should render correctly 1`] = `
+<div>
+  <PostList
+    media={Array []}
+    posts={Array []}
+  />
+  <center>
+    <Pagination
+      onClickPage={[Function]}
+      pageCount={1}
+      postCount={0}
+      selectedPage={1}
+    />
+  </center>
+</div>
+`;

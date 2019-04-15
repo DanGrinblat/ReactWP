@@ -1,7 +1,7 @@
 import React from "react";
 import PostList from "./PostList";
 import Pagination from "./Pagination";
-import wprest from "../api/wprest";
+import axios from "../api/axios";
 
 class BlogHome extends React.Component {
 	state = {
@@ -51,9 +51,8 @@ class BlogHome extends React.Component {
 			}
 		}
 
-		const response = await wprest.get("wp/v2/posts", { params });
-		console.log(response);
-
+		const response = await axios.get("wp/v2/posts", { params });
+		console.log("reach");
 		if (this.state.posts !== response.data) {
 			//If there are 0 pages, set pageCount to 1
 			const newPageCount =
@@ -70,7 +69,7 @@ class BlogHome extends React.Component {
 	};
 
 	async retrieveMedia(postIdsList) {
-		const response = await wprest.get("wp/v2/media", {
+		const response = await axios.get("wp/v2/media", {
 			params: { include: postIdsList }
 		});
 
@@ -81,7 +80,8 @@ class BlogHome extends React.Component {
 	}
 
 	async retrieveCategories() {
-		const response = await wprest.get("wp/v2/categories");
+		const response = await axios.get("wp/v2/categories");
+
 		if (this.state.categories !== response.data) {
 			this.setState({ categories: response.data });
 		}

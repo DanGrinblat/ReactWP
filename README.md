@@ -1,5 +1,7 @@
 ReactWP is a simple blog theme created with ReactJS and the WordPress REST API.
-The project has complete unit test coverage.
+The project has responsive design and complete unit test coverage.
+
+See it in action: https://react-wp-dg.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

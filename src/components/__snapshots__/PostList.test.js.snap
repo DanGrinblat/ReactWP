@@ -8,17 +8,56 @@ exports[`PostList should render correctly 1`] = `
     className="equal width column"
     key="1"
   >
-    <center>
+    <center
+      key="1"
+    >
       <Link
+        key="1"
         to="/blog/undefined"
       >
         <PostSummary
+          key="1"
           post={
             Object {
               "excerpt": Object {
                 "rendered": "excerpt",
               },
-              "featured_media": null,
+              "featured_media": "2",
+              "id": 1,
+              "imageLink": "linktest",
+              "title": "title",
+            }
+          }
+        />
+      </Link>
+    </center>
+  </div>
+</div>
+`;
+
+exports[`branch PostList should still render if there is no matching media 1`] = `
+<div
+  className="ui container three column doubling stackable middle aligned centered grid post-list"
+>
+  <div
+    className="equal width column"
+    key="1"
+  >
+    <center
+      key="1"
+    >
+      <Link
+        key="1"
+        to="/blog/undefined"
+      >
+        <PostSummary
+          key="1"
+          post={
+            Object {
+              "excerpt": Object {
+                "rendered": "excerpt",
+              },
+              "featured_media": "2",
               "id": 1,
               "imageLink": null,
               "title": "title",

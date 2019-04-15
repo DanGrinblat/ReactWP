@@ -10,7 +10,9 @@ exports[`PostSummary should render correctly 1`] = `
   <div
     className="post-summary-text"
   >
-    <b />
+    <b>
+      title
+    </b>
     <div>
       excerpt
     </div>

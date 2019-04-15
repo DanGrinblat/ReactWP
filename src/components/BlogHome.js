@@ -52,7 +52,7 @@ class BlogHome extends React.Component {
 		}
 
 		const response = await axios.get("wp/v2/posts", { params });
-		console.log("reach");
+
 		if (this.state.posts !== response.data) {
 			//If there are 0 pages, set pageCount to 1
 			const newPageCount =
@@ -85,6 +85,7 @@ class BlogHome extends React.Component {
 		if (this.state.categories !== response.data) {
 			this.setState({ categories: response.data });
 		}
+
 		return response.data;
 	}
 

@@ -39,4 +39,29 @@ describe("API requests", () => {
 			}
 		});
 	});
+
+	it("retrieves posts by slug with axios where the state is the same as the response", async () => {
+		let responseObj = {
+			data: [
+				{
+					title: { rendered: "title" },
+					content: { rendered: "content" }
+				}
+			]
+		};
+
+		const makeCall = function(responseObj) {
+			blogHome.instance().retrievePostBySlug("testslug");
+			let requestInfo = mockAxios.lastReqGet();
+			mockAxios.mockResponse(responseObj, requestInfo);
+		};
+		makeCall(responseObj);
+		makeCall(responseObj);
+
+		expect(mockAxios.get).toHaveBeenCalledWith("wp/v2/posts", {
+			params: {
+				slug: "testslug"
+			}
+		});
+	});
 });

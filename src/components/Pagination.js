@@ -3,7 +3,6 @@ import React from "react";
 
 class Pagination extends React.Component {
 	onClickPageHelper = event => {
-		console.log(event);
 		this.props.onClickPage(event.target.id);
 	};
 

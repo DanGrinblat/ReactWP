@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render correctly 1`] = `
+<div
+  className="ui pagination menu"
+>
+  <a
+    className="item active"
+    id={1}
+    key="1"
+    onClick={[Function]}
+  >
+    1
+  </a>
+  <a
+    className="item "
+    id={2}
+    key="2"
+    onClick={[Function]}
+  >
+    2
+  </a>
+</div>
+`;

@@ -14,9 +14,9 @@ class PostList extends React.Component {
 
 			return (
 				<div key={post.id} className="equal width column">
-					<center>
-						<Link to={`/blog/${post.slug}`}>
-							<PostSummary post={post} />
+					<center key={post.id}>
+						<Link key={post.id} to={`/blog/${post.slug}`}>
+							<PostSummary key={post.id} post={post} />
 						</Link>
 					</center>
 				</div>

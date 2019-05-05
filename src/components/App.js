@@ -38,5 +38,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-//Home - Should Display Latest # Posts ( Title and excerpt only ) with pagination
